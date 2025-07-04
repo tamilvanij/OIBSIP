@@ -1,0 +1,47 @@
+import speech_recognition as sr
+import pyttsx3
+import datetime
+
+# Initialize text-to-speech engine
+engine = pyttsx3.init()
+
+def speak(text):
+    engine.say(text)
+    engine.runAndWait()
+
+# Initialize recognizer
+listener = sr.Recognizer()
+
+try:
+    with sr.Microphone() as source:
+        print("Listening... Please speak something.")
+        audio = listener.listen(source, timeout=10, phrase_time_limit=5)
+
+        command = listener.recognize_google(audio)
+        print(f"You said: {command}")
+
+        command = command.lower()
+
+        if "hello" in command:
+            response = "Hello there! How can I help you?"
+        elif "time" in command:
+            time_now = datetime.datetime.now().strftime("%H:%M:%S")
+            response = f"The current time is {time_now}."
+        elif "date" in command:
+            today_date = datetime.datetime.now().strftime("%Y-%m-%d")
+            response = f"Today's date is {today_date}."
+        else:
+            response = "Sorry, I didn't understand that."
+
+        print(f"Assistant: {response}")
+        speak(response)
+
+except sr.UnknownValueError:
+    print("Assistant: I could not understand your voice.")
+    speak("I could not understand your voice.")
+except sr.RequestError:
+    print("Assistant: Not able to connect to the speech recognition service.")
+    speak(" Not able to connect to the speech recognition service.")
+except Exception as e:
+    print(f"Assistant: An error occurred: {e}")
+    speak("An unexpected error occurred.")

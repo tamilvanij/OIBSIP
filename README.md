@@ -4,19 +4,22 @@ This repository contains a collection of beginner-level Python projects develope
 
 Projects Included
 
-1.  Basic Weather App
-Description: A CLI-based app that fetches current weather data using the OpenWeatherMap API.
-
-2.  Password Generator
+#  Password Generator
 Description: Generates secure, random passwords of desired length and complexity.
 
-3.  Voice Assistant (Basic)
+#  Voice Assistant (Basic)
 Description: A simple voice assistant that recognizes speech and responds using text-to-speech.
 
-4.  Chat App (Console-based)
-Description: A basic console chat app using socket programming.
 
-5.  BMI Calculator
+#  BMI Calculator
 Description: Calculates Body Mass Index based on user input (weight and height).
+
+# Technologies Used
+
+ Python 3
+
+# Author
+
+Tamilvani
 
 

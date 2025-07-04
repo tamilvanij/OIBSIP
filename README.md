@@ -4,7 +4,7 @@ This repository contains a collection of beginner-level Python projects develope
 
 Projects Included
 
-1. 🌦 Basic Weather App
+1.  Basic Weather App
 Description: A CLI-based app that fetches current weather data using the OpenWeatherMap API.
 
 2.  Password Generator
